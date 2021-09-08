@@ -10,7 +10,8 @@
     "linebreak-style": "off",
     "max-len": "off",
     "object-curly-spacing": "off",
-    "require-jsdoc": "off"
+    "require-jsdoc": "off",
+    "indent": "off"
   },
   "extends": ["eslint:recommended", "google"]
 }
