@@ -1,6 +1,5 @@
 class Dom {
   constructor(selector) {
-    // this.$$listeners = {}
     this.$el =
       typeof selector === 'string' ? document.querySelector(selector) : selector
   }
@@ -19,13 +18,8 @@ class Dom {
   }
 
   on(eventType, callback) {
-    // this.$$listeners[eventType] = callback
     this.$el.addEventListener(eventType, callback)
   }
-
-  /* off(eventType) {
-    this.$el.removeEventListener(eventType, this.$$listeners[eventType])
-  } */
 
   off(eventType, callback) {
     this.$el.removeEventListener(eventType, callback)
@@ -48,6 +42,20 @@ class Dom {
 
   getCoords() {
     return this.$el.getBoundingClientRect()
+  }
+
+  get data() {
+    return this.$el.dataset
+  }
+
+  findAll(selector) {
+    return this.$el.querySelectorAll(selector)
+  }
+
+  css(styles = {}) {
+    Object.keys(styles).forEach((key) => {
+      this.$el.style[key] = styles[key]
+    })
   }
 }
 
