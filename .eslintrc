@@ -11,7 +11,8 @@
     "max-len": "off",
     "object-curly-spacing": "off",
     "require-jsdoc": "off",
-    "indent": "off"
+    "indent": "off",
+    "operator-linebreak": "off"
   },
   "extends": ["eslint:recommended", "google"]
 }
