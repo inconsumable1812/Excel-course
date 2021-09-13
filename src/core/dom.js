@@ -13,7 +13,14 @@ class Dom {
   }
 
   text(text) {
-    this.$el.textContent = text
+    if (typeof text === 'string') {
+      this.$el.textContent = text
+      return this
+    }
+    if (this.$el.tagName.toLowerCase() === 'input') {
+      return this.$el.value.trim()
+    }
+    return this.$el.textContent.trim()
   }
 
   clear() {
@@ -83,6 +90,7 @@ class Dom {
 
   removeClass(className) {
     this.$el.classList.remove(className)
+    return this
   }
 
   css(styles = {}) {
