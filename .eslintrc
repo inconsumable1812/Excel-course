@@ -12,7 +12,13 @@
     "object-curly-spacing": "off",
     "require-jsdoc": "off",
     "indent": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "space-before-function-paren": [
+      "ok",
+      {
+        "anonymous": "always"
+      }
+    ]
   },
   "extends": ["eslint:recommended", "google"]
 }
