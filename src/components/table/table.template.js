@@ -1,6 +1,6 @@
 const CODES = {
   A: 65,
-  Z: 90,
+  Z: 90
 }
 
 function toColumn(col, index) {
@@ -25,9 +25,7 @@ function toCell(row) {
 }
 
 function createRow(index, content) {
-  const resizer = index
-    ? '<div class="row-resize" data-resize="row"></div>'
-    : ''
+  const resizer = index ? '<div class="row-resize" data-resize="row"></div>' : ''
   return `
     <div class="row" data-type="resizable">
       <div class="row-info">${index ? index : ''}

@@ -5,7 +5,7 @@ import {
   shouldResize,
   isCell,
   matrix,
-  nextSelector,
+  nextSelector
 } from '@/components/table/table.functions'
 import { TableSelection } from '@/components/table/TableSelection'
 import { $ } from '@core/dom'
@@ -17,7 +17,7 @@ export class Table extends ExcelComponent {
     super($root, {
       name: 'Table',
       listeners: ['mousedown', 'keydown', 'input'],
-      ...options,
+      ...options
     })
   }
 
@@ -62,19 +62,13 @@ export class Table extends ExcelComponent {
         this.selection.selectGroup($cells)
       } else {
         this.selection.select($target)
+        this.$emit('table:select', $target)
       }
     }
   }
 
   onKeydown(event) {
-    const keys = [
-      'Enter',
-      'Tab',
-      'ArrowDown',
-      'ArrowRight',
-      'ArrowLeft',
-      'ArrowUp',
-    ]
+    const keys = ['Enter', 'Tab', 'ArrowDown', 'ArrowRight', 'ArrowLeft', 'ArrowUp']
 
     // тоже самое что event.key
     const { key } = event

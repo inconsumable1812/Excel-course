@@ -10,10 +10,11 @@ export function resizeHandler($root, event) {
 
   $resizer.css({
     opacity: 1,
-    [sideProp]: '-2000px',
+    [sideProp]: '-2000px'
   })
 
   document.onmousemove = (e) => {
+    e.preventDefault()
     if (type === 'col') {
       const delta = Math.round(e.pageX - coords.right)
       value = coords.width + delta
@@ -22,7 +23,7 @@ export function resizeHandler($root, event) {
       const delta = Math.round(e.pageY - coords.bottom)
       value = coords.height + delta
       $resizer.css({
-        bottom: -delta + 'px',
+        bottom: -delta + 'px'
       })
     }
   }
@@ -31,20 +32,20 @@ export function resizeHandler($root, event) {
     document.onmouseup = null
     if (type === 'col') {
       $parent.css({
-        width: value + 'px',
+        width: value + 'px'
       })
       $root.findAll(`[data-col="${$parent.data.col}"]`).forEach((el) => {
         el.style.width = value + 'px'
       })
     } else {
       $parent.css({
-        height: value + 'px',
+        height: value + 'px'
       })
     }
     $resizer.css({
       opacity: 0,
       bottom: 0,
-      right: 0,
+      right: 0
     })
   }
 }
