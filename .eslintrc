@@ -8,17 +8,14 @@
   "rules": {
     "semi": "off",
     "linebreak-style": "off",
-    "max-len": "off",
     "object-curly-spacing": "off",
     "require-jsdoc": "off",
+    "space-before-function-paren": "off",
+    "max-len": "off",
+    "comma-dangle": "off",
+    "no-extra-semi": "off",
     "indent": "off",
-    "operator-linebreak": "off",
-    "space-before-function-paren": [
-      "ok",
-      {
-        "anonymous": "always"
-      }
-    ]
+    "operator-linebreak": "off"
   },
   "extends": ["eslint:recommended", "google"]
 }
